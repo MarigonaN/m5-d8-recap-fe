@@ -25,7 +25,7 @@ class HomePage extends Component {
         const booksResp = await fetch("http://localhost:3001/books")
         const books = await booksResp.json()
         this.setState({
-            books: books.data.slice(0, 50)
+            books: books.data.slice(50, 100)
         })
     }
 }

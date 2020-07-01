@@ -7,15 +7,16 @@ class SingleBook extends Component {
         const { title, img, category, price, asin } = this.props.item
 
         return (
-            <Card>
-                <Card.Img variant="top" src={img} />
-                <Card.Body>
-                    <Card.Title>{title}</Card.Title>
+            <Card style={{width: "185px", marginTop: "20px"}}>
+                <Card.Img variant="top" src={img} style={{height: "250px"}}/>
+                <Card.Body style={{height: "130px"}}>
+                    <Card.Title style={{fontSize: "14px"}}>{title}</Card.Title>
                     <Card.Text>
                         {category} - {price}
                     </Card.Text>
-                    <Button variant="primary">Details</Button>
+                    
                 </Card.Body>
+                <Button variant="info">Details</Button>
             </Card>
         )
     }

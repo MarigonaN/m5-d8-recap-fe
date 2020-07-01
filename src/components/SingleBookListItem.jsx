@@ -35,7 +35,7 @@ class SingleBookListItem extends Component {
              
             </Media.Body>
             <div className="mt-5">
-                <Button className="ml-5" variant="danger" onClick={() => this.deleteBook(asin) } >X</Button>
+                <Button className="ml-5" variant="danger" onClick={() => this.deleteBook(asin) } >Delete</Button>
                 <Button className="ml-3" variant="warning"><Link to={"/details/" + asin}>Edit</Link></Button>
             </div>
           </Media>
