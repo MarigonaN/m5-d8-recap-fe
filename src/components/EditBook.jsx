@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from "react-router-dom"
-import { Row, Col, Form, Button, Image} from "react-bootstrap"
+import { Row, Col, Form, Button, Image, Container} from "react-bootstrap"
 import CommentsList from './CommentsList'
 
 class EditBook extends Component {
@@ -43,9 +43,10 @@ class EditBook extends Component {
     render() {
         const { title, img, category, price, asin } = this.state
         return (
-            <Row>
-                <Col>
-                <Image fluid src={img} /> </Col>
+            <Container>
+            <Row className="mt-5">
+                <Col >
+                <Image fluid src={img} style={{height: "85vh", }}/> </Col>
                 <Col>
                 <Form>
                         <Form.Group controlId="asin">
@@ -84,17 +85,18 @@ class EditBook extends Component {
                                 onChange={(e) => this.setState({ img: e.currentTarget.value })}
                                 type="text" placeholder="Image URL" />
                         </Form.Group>
-                        <Button variant="success" onClick={this.editBook}>Save Changes</Button>
+                        <Button className="mr-5" variant="info" onClick={this.editBook}>Save Changes</Button>
 
 
                         <input type="file" onChange={e => this.setState({ selectedFile: e.currentTarget.files[0]}) } />
-                        <Button variant="success" onClick={this.uploadCover}>Upload cover</Button>
+                      
                     </Form>
 
                     <CommentsList asin={this.props.match.params.asin} />
                 </Col>
 
             </Row>
+        </Container>
         )
     }
     

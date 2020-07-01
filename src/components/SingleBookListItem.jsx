@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Media, Button} from "react-bootstrap"
+import { Media, Button, Row} from "react-bootstrap"
 import { Link } from 'react-router-dom'
 
 class SingleBookListItem extends Component {
@@ -20,20 +20,24 @@ class SingleBookListItem extends Component {
         return (
             <Media>
             <img
-              width={64}
-              height={64}
-              className="mr-3"
+              width={150}
+              height={180}
+              className="mr-3 mt-3"
               src={img}
               alt="Generic placeholder"
             />
             <Media.Body>
-              <h5>{title}</h5>
+              <h5 className="mt-3">{title}</h5>
               <p>
                 {category} - {price}
-                <Button className="ml-5" variant="danger" onClick={() => this.deleteBook(asin) } >X</Button>
-                <Button className="ml-5" variant="warning"><Link to={"/details/" + asin}>Edit</Link></Button>
+               
               </p>
+             
             </Media.Body>
+            <div className="mt-5">
+                <Button className="ml-5" variant="danger" onClick={() => this.deleteBook(asin) } >X</Button>
+                <Button className="ml-3" variant="warning"><Link to={"/details/" + asin}>Edit</Link></Button>
+            </div>
           </Media>
         )
     }

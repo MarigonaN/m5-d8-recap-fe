@@ -48,7 +48,7 @@ class CreateComment extends Component {
                                 type="text" placeholder="username" />
                         </Form.Group>
 
-                        <Button onClick={this.addComment}>Add Comment</Button>
+                        <Button onClick={this.addComment} variant="info">Add Comment</Button>
                         
                     </Form>                
             </div>
